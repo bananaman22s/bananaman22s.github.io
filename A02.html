@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="A02css.css">
+    <script src="A02js.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Create logo -->
+        <img src="images/cat.png" class="logo">
+        <nav> <!-- menu system -->
+            <ul class="nav-list">
+                <li><button id="page1btn">Types of Alcohol</button></li> <!-- Button 1 -->
+                <li><button id="page2btn">Cocktails</button></li> <!-- Button 2 -->
+                <li><button id="page3btn">History</button></li> <!-- Button 3 -->
+                <li><button id="gamebtn">Game</button></li> <!-- Button for Game -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Create Background Video {Need to make it embedded as inline video} -->
+    <video autoplay loop muted playsinline class="back-video">
+        <source src="videos/alc.mp4" type="video/mp4">
+    </video>
+
+    <!-- To create pages -->
+    <div id="pagecontainer">
+        <div class="page" id="page1">
+            page 1 content
+        </div>
+        <div class="page" id="page2">
+            page 2 content
+        </div>
+        <div class="page" id="page3">
+            page 3 content
+        </div>
+    </div>
+
+    <!-- Game Board Container -->
+    <div id="game-container">
+    	<h1>Alcohol Crush<br></h1>
+        <h1>Score: <span id="score">0</span></h1>
+        <div id="board"></div>
+    </div>
+</body>
+</html>

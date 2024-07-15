@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: background to make the header more readable over video */
+    color: ghostwhite;
+    z-index: 10;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px; /* Adjust this value to control the gap between buttons */
+    margin: 80px;
+}
+
+.nav-list li {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: ghostwhite;
+    background-color: saddlebrown;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    color: black;
+}
+
+.back-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Text overlay for video */
+.video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 68px;
+    font-weight: bold;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.video-overlay:hover {
+    color: brown;
+    text-shadow: 1px 1px 0 lightblue, -1px -1px 0 red, 1px -1px 0 limegreen, -1px 1px 0 orange;
+}
+
+#pagecontainer {
+    position: relative;
+    margin-top: 100vh; /* Push the pages below the video */
+    z-index: 1;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#page1 {
+    background: red;
+}
+
+#page2 {
+    background: green;
+}
+
+#page3 {
+    background: blue;
+}
+
+#board {
+    width: 450px; // change width and height if you want to change the size of the board, 50px per block
+    height: 450px;
+    background-color: lightblue;
+    border: 5px solid slategray;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+#board img {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+/* CSS for responsive menu */
+@media screen and (max-width: 800px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        width: 70px;
+    }
+}
