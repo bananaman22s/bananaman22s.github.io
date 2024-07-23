@@ -13,6 +13,7 @@ html, body {
 /* Body styling */
 body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scrolling */
     font-family: Arial, sans-serif;
 }
 
@@ -127,7 +128,7 @@ button:hover {
 /* Page styling */
 .page {
     width: 100%;
-    height: 120vh;
+    height: 100vh; /* Adjust to fit the viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,19 +136,13 @@ button:hover {
     font-size: 28px;
     padding: 85px;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow: hidden; /* Prevent vertical scrolling within each page */
 }
 
 /* Individual pages */
-#page1 {
-    background: red;
-}
-
-#page2 {
-    background: green;
-}
-
-#page3 {
-    background: blue;
+#page1, #page2, #page3 {
+    overflow-x: hidden;
+    overflow-y: hidden; /* Prevent vertical scrolling on individual pages */
 }
 
 /* Game board styling */
