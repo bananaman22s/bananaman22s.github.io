@@ -21,7 +21,6 @@ header {
     position: absolute;
     top: 0;
     width: 100%;
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -380,6 +379,9 @@ button:hover {
     .video-overlay {
         font-size: 38px;
     }
+    .page3-img h2{
+    font-size: 20px;
+    }   
     .page3-img:hover h2{
     font-size: 15px;
     }
