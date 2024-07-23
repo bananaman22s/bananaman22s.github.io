@@ -377,5 +377,8 @@ button:hover {
     .image-container {
         max-height: 80%;
     }
+	.video-overlay {
+        font-size: 38px;
+    }
 
 }
