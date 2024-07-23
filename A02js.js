@@ -1,3 +1,146 @@
+// Main page
+//target all elements to save to constants
+const page1btn=document.querySelector("#page1btn");
+const page2btn=document.querySelector("#page2btn");
+const page3btn=document.querySelector("#page3btn");
+var allpages=document.querySelectorAll(".page");
+//select all subtopic pages
+console.log(allpages);
+hideall();
+function hideall(){ //function to hide all pages
+	for(let onepage of allpages){ //go through all subtopic pages
+		onepage.style.display="none"; //hide it
+	}
+}
+function show(pgno){ //function to show selected page no
+	hideall();
+	//select the page based on the parameter passed in
+	let onepage=document.querySelector("#page"+pgno);
+	//show the page
+	onepage.style.display="block";
+}
+/*Listen for clicks on the buttons, assign anonymous
+eventhandler functions to call show function*/
+page1btn.addEventListener("click", function () {
+	show(1);
+});
+page2btn.addEventListener("click", function () {
+	show(2);
+});
+page3btn.addEventListener("click", function () {
+	show(3);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamBtn = document.querySelector('#hamIcon');
+    const navList = document.querySelector('.nav-list');
+
+    // Toggle menu when hamburger icon is clicked
+    hamBtn.addEventListener('click', function() {
+        navList.classList.toggle('active'); // Toggle the menu
+        hamBtn.classList.toggle('active'); // Toggle the hamburger icon
+    });
+
+    // Close the menu if clicking outside of it
+    document.addEventListener('click', function(event) {
+        if (!hamBtn.contains(event.target) && !navList.contains(event.target)) {
+            navList.classList.remove('active'); // Hide menu
+            hamBtn.classList.remove('active'); // Reset hamburger icon
+        }
+    });
+});
+
+
+
+//Page 2
+let currentIndex = 0; // Initial index of the slide
+
+// Slide data (text content for each slide)
+const slideTexts = [
+    "Margarita - Tequila, tripple sec, lime juice",
+    "EspressoMartini - Espresso, coffee liqueur, vodka",
+    "Mojito - White rum, sugar, lime zest, soda water",
+    "PinaColada - coconut cream, white rum, pineapple juice",
+    "SexOnTheBeach - vodka, peach schnapps, cranberry, orange juice",
+    "Classic Negroni - gin, vermouth, campari",
+    "Old Fassion - whisky, bitters, soda water, orange zest",
+    "Pimms - mint leaves, cucumber, orange, strawberry, pomegranate, ginger ale"
+];
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slide'); // Get all slides
+    if (index >= slides.length) {
+        currentIndex = 0; // Loop back to first slide
+    } else if (index < 0) {
+        currentIndex = slides.length - 1; // Loop back to last slide
+    } else {
+        currentIndex = index; // Set current slide index
+    }
+    
+    const offset = -currentIndex * 100; // Calculate translation offset
+    document.querySelector('.slider-wrapper').style.transform = 'translateX(' + offset + '%)';
+
+    // Update the text box content based on the current slide index
+    const textBox = document.querySelector('#cocktail-text-box p'); // Select the text box outside the slider
+    if (textBox) {
+        textBox.textContent = slideTexts[currentIndex]; // Update text content
+        console.log('Text box updated with:', slideTexts[currentIndex]); // Debugging
+    } else {
+        console.error('Text box not found for slide index:', currentIndex); // Debugging
+    }
+}
+
+function nextSlide() {
+    showSlide(currentIndex + 1); // Show next slide
+}
+
+function prevSlide() {
+    showSlide(currentIndex - 1); // Show previous slide
+}
+
+// Attach event listeners to buttons
+document.addEventListener('DOMContentLoaded', function() {
+    showSlide(currentIndex); // Show initial slide
+
+    const nextSlideBtn = document.getElementById('nextSlideBtn');
+    const prevSlideBtn = document.getElementById('prevSlideBtn');
+
+    if (nextSlideBtn) {
+        nextSlideBtn.addEventListener('click', function() {
+            nextSlide(); // Show next slide on button click
+        });
+    }
+
+    if (prevSlideBtn) {
+        prevSlideBtn.addEventListener('click', function() {
+            prevSlide(); // Show previous slide on button click
+        });
+    }
+});
+
+
+// Page 3
+// Create an IntersectionObserver instance
+const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { 
+        console.log(entry);
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+// Select all elements with the class 'hidden'
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach(function(el) {
+    observer.observe(el); // Observe each element
+});
+
+
+// Game
 var candies = ["vodka", "Jagermeister", "cointreau", "blacklabel", "cordonBleu", "singleton"]; // Array of candy colors
 var board = []; // 2D array to represent the game board
 var rows = 9; // Number of rows on the board (default 9)
@@ -20,7 +163,7 @@ window.onload = function() {
             reshuffleBoard(); // Reshuffle the board if no valid moves are found
         }
     }, 100);
-}
+};
 
 // Function to return a random candy color from the candies array
 function randomCandy() {
@@ -272,49 +415,10 @@ function reshuffleBoard() {
     }
 }
 
-//target all elements to save to constants
-const page1btn=document.querySelector("#page1btn");
-const page2btn=document.querySelector("#page2btn");
-const page3btn=document.querySelector("#page3btn");
-var allpages=document.querySelectorAll(".page");
-//select all subtopic pages
-console.log(allpages);
-hideall();
-function hideall(){ //function to hide all pages
-	for(let onepage of allpages){ //go through all subtopic pages
-		onepage.style.display="none"; //hide it
-	}
-}
-function show(pgno){ //function to show selected page no
-	hideall();
-	//select the page based on the parameter passed in
-	let onepage=document.querySelector("#page"+pgno);
-	//show the page
-	onepage.style.display="block";
-}
-/*Listen for clicks on the buttons, assign anonymous
-eventhandler functions to call show function*/
-page1btn.addEventListener("click", function () {
-	show(1);
-});
-page2btn.addEventListener("click", function () {
-	show(2);
-});
-page3btn.addEventListener("click", function () {
-	show(3);
-});
 
-const hamBtn=document.querySelector("#hamIcon");
-hamBtn.addEventListener("click",toggleMenus);
-const menuItemsList=document.querySelector("nav ul");
-function toggleMenus(){ /*open and close menu*/
-	menuItemsList.classList.toggle("menuHide");
-	//if(menuItemsList.style.display=="block")
-	//	menuItemsList.style.display="none";
-	//else 
-	//	menuItemsList.style.display="block";
-}
 
+
+	
 
 
 
