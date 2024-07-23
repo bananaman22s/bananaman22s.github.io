@@ -1,0 +1,381 @@
+/* Reset margins, padding, and center text */
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Ensure full height for HTML and body */
+html, body {
+    height: 100%;
+}
+
+/* Body styling */
+body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Optional: background to make the header more readable over video */
+    color: ghostwhite;
+    z-index: 10; /* Ensure header stays above other content */
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px; /* Adjust this value to control the gap between buttons */
+    margin: 90px;
+}
+
+.nav-list li {
+    list-style: none;
+}
+
+/* Button styling */
+button {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: ghostwhite;
+    background-color: saddlebrown;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    color: black;
+}
+
+/* Background video styling */
+.back-video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure video stays behind other content */
+}
+
+/* Text overlay for video */
+.video-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 68px;
+    font-weight: bold;
+    z-index: 2; /* Ensure text overlay stays above other content */
+    transition: all 0.3s ease;
+}
+
+.video-overlay:hover {
+    color: sandybrown;
+    text-shadow: 1px 1px 0 lightblue, -1px -1px 0 red, 1px -1px 0 limegreen, -1px 1px 0 orange; /* Text shadow effect on hover */
+}
+
+/* Basic styles for the hamburger icon */
+.ham-icon {
+    display: none; /* Hide the hamburger icon by default */
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.ham-icon .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px auto;
+    transition: all 0.3s;
+}
+
+
+/* Container for all pages */
+#pagecontainer {
+    position: relative;
+    margin-top: 100vh; /* Push the pages below the video */
+    z-index: 1;
+}
+
+/* Page styling */
+.page {
+    width: 100%;
+    height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+    padding: 85px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#page1 {
+    background: red;
+}
+
+#page2 {
+    background: green;
+}
+
+#page3 {
+    background: blue;
+}
+
+/* Game board styling */
+#board {
+    width: 450px; /* Change width and height if you want to change the size of the board, 50px per block */
+    height: 450px;
+    background-color: lightblue;
+    border: 5px solid slategray;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#board img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Text box and image container styling */
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.text-box,
+.image-container {
+	gap: 10px;
+    padding: 10px;
+    margin-top: 20px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.text-box {
+    max-width: 49%;
+    background-color: goldenrod; /* Optional: add background color for text box */
+    padding: 20px;
+    border-radius: 5px; /* Optional: add rounded corners */
+    position: relative; /* Required for the animated border */
+    border: 5px solid; /* Initial border for the animation */
+    border-image-slice: 1; /* Required for border-image */
+    animation: borderChange 5s infinite; /* Apply the border animation */
+    overflow: hidden; /* Prevent content overflow */
+    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+}
+
+.image-container {
+    max-width: 50%;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Keyframes for border color change animation */
+@keyframes borderChange {
+    0% {
+        border-image: linear-gradient(36deg, white, yellow) 1;
+    }
+    10% {
+        border-image: linear-gradient(72deg, yellow, green) 1;
+    }
+    20% {
+        border-image: linear-gradient(108deg, green, blue) 1;
+    }
+    30% {
+        border-image: linear-gradient(144deg, blue, violet) 1;
+    }
+    40% {
+        border-image: linear-gradient(180deg, violet, hotpink) 1;
+    }
+    50% {
+        border-image: linear-gradient(216deg, hotpink, royalblue) 1;
+    }
+    60% {
+        border-image: linear-gradient(252deg, royalblue, gold) 1;
+    }
+    70% {
+        border-image: linear-gradient(288deg, gold, springgreen) 1;
+    }
+    80% {
+        border-image: linear-gradient(324deg, springgreen, crimson) 1;
+    }
+    90% {
+        border-image: linear-gradient(360deg, crimson, turquoise) 1;
+    }
+    100% {
+        border-image: linear-gradient(45deg, turquoise, white) 1;
+    }
+}
+
+.slider {
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background: wheat;
+    margin: 0 auto; /* Center horizontally */
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    height: 700px;
+    transition: opacity 0.5s ease;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.Cocktails {
+	width: 200%;
+}
+
+/*page3*/
+
+
+.hidden {
+	opacity: 0;
+	filter: blur(5px);
+	transform: translateX(-100%);
+	transition: all 1s;
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateX(0);
+}
+
+.gallery {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.page3-img {
+	width: 150px;
+	height: 800px;
+	margin: 10px;
+	border-radius: 50px;
+	background: url(images/base.jpeg);
+	background-size: cover;
+	background-position: center;
+	position: relative;	
+	transition: width 1.5s;
+}
+
+.page3-img:nth-child(2){
+	background: url(images/liquers.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.page3-img:nth-child(3){
+	background: url(images/wine.jpeg);
+	background-size: cover;
+	background-position: center;
+}
+
+.page3-img:nth-child(4){
+	background: url(images/beers.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+.page3-img h2{
+	color: red;
+	position:absolute;
+	bottom: 5px;
+	left: 30px;
+	opacity: 0;
+	transition: bottom 1.0s, opacity 0.5s;
+}
+
+.page3-img:hover{
+	width: 450px;
+	cursor: pointer;
+}
+
+.page3-img:hover h2{
+	opacity: 1;
+	bottom: 25px;
+}
+
+
+/* CSS for responsive adjustments */
+@media screen and (max-width: 800px) {
+    .nav-list {
+        display: none; /* Hide navigation list by default on small screens */
+        flex-direction: column;
+        gap: 50px;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on your header height */
+        left: 80px;
+    }
+
+    .nav-list.active {
+        display: flex; /* Show the menu when the active class is added */
+    }
+
+    .ham-icon {
+        display: block; /* Show the hamburger icon on small screens */
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    /* Ensure text box and image container take full width on smaller screens */
+    .text-box,
+    .image-container {
+        max-height: 80%;
+    }
+
+}
