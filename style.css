@@ -395,5 +395,8 @@ button:hover {
     .slider {
         max-height: 70%;
     }
+	.slider-wrapper {
+        max-height: 70%;
+    }
 
 }
