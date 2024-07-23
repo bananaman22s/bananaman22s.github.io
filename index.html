@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -23,18 +23,18 @@
     <script src="script.js" defer></script> <!-- Link to JavaScript file -->
 </head>
 <body>
-    <!-- Your existing body content -->
+    <!-- Header with logo and nav -->
     <header>
-        <!-- Create logo -->
+        <!-- Logo img -->
         <img src="images/A02.png" class="logo" alt="Logo">
         <nav>
-            <!-- Hamburger menu button -->
+            <!-- Ham menu button -->
             <button id="hamIcon" class="ham-icon">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <!-- Menu system with navigation buttons and dropdown -->
+            <!-- Nav with buttons -->
             <ul class="nav-list">
                 <li><button id="page1btn">History</button></li> <!-- Button for page 1 -->
                 <li><button id="page2btn">Cocktails</button></li> <!-- Button for page 2 -->
@@ -44,7 +44,7 @@
         </nav>
     </header>
     
-    <!-- Overlay with a heading -->
+    <!-- Overlay text on background video -->
     <div class="video-overlay">
         <h1>Alcohol</h1>
     </div>
@@ -60,7 +60,7 @@
         <div class="page" id="page1">
             <section class='hidden'>
                 <div class="content-container">
-                    <!-- Text box area -->
+                    <!-- Text box -->
                     <div class="text-box">
                         <h2>The beginning</h2>
                         <p>Back in 7000-6000BCE, china used ingredients that contains sugar(sucrose,flucose,glucose,etc) and ferment them to make alcohol. Ingredients such as, honey, rice, fruits, etc.
@@ -74,9 +74,9 @@
                     <div class="image-container">
                         <img src="images/alc2.jpg" alt="Image">
                     </div>
-                    <!-- Another text box -->
+                    <!-- Text box-->
                     <div class="text-box">
-                        <h2>Mordern</h2>
+                        <h2>Modern</h2>
                         <p>
                             Today, alcohol production is made easy using machinery. Beer, wines, spirits have been made accessible. State-of-the-art technology that guarantees high quality alcohol. Alcohol is still a huge part in modern culture and society, however it is noted that excessive consumption will lead to health risks.
                         </p>
@@ -85,11 +85,12 @@
             </section>
         </div>
         
-        <!-- Page 2 content with slider -->
+        <!-- Page 2 content with image slider -->
         <div class="page" id="page2">
             <div class="slider">
-                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <button class="prev" onclick="prevSlide()">&#10094;</button> <!-- Previous slide button -->
                 <div class="slider-wrapper">
+                    <!-- Slider images -->
                     <img src="images/margarita.jpg" class="slide" alt="Image 1">
                     <img src="images/EspressoMartini.jpg" class="slide" alt="Image 2">
                     <img src="images/Mojito.jpg" class="slide" alt="Image 3">
@@ -99,10 +100,10 @@
                     <img src="images/oldfassion.jpg" class="slide" alt="Image 7">
                     <img src="images/Pimms.jpg" class="slide" alt="Image 8">
                 </div>
-                <button class="next" onclick="nextSlide()">&#10095;</button>
+                <button class="next" onclick="nextSlide()">&#10095;</button> <!-- Next slide button -->
             </div>
             
-            <!-- Text box for cocktails outside of the slider -->
+            <!-- Text box -->
             <div class="Cocktails">
                 <div class="text-box" id="cocktail-text-box">
                     <p>Your text goes here. This is a sample text that you can replace with your actual content.</p>
@@ -110,10 +111,11 @@
             </div>
         </div>
         
-        <!-- Page 3 content -->
+        <!-- Page 3 content with image gallery -->
         <div class="page" id="page3">
             <section class="hidden">
                 <div class="gallery">
+                    <!-- Image gallery with descriptions -->
                     <div class="page3-img"><h2>Base liquors - distilled alcoholic drink</h2></div>
                     <div class="page3-img"><h2>Liqueurs - distilled with plant products</h2></div>
                     <div class="page3-img"><h2>Wines - fermented grape juice</h2></div>
@@ -127,7 +129,7 @@
     <div id="game-container">
         <h1>Alcohol Crush</h1>
         <h1>Score: <span id="score">0</span></h1>
-        <div id="board"></div>
+        <div id="board"></div> <!-- Game board -->
     </div>
 </body>
 </html>
