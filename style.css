@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     text-align: center;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Ensure full height for HTML and body */
@@ -13,7 +12,7 @@ html, body {
 
 /* Body styling */
 body {
-    overflow-x: hidden; /* Hide horizontal scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
     font-family: Arial, sans-serif;
 }
 
@@ -46,7 +45,7 @@ nav {
 .nav-list {
     display: flex;
     gap: 30px; /* Adjust this value to control the gap between buttons */
-    margin: 0; /* Removed margin to fit content within viewport */
+    margin: 90px;
 }
 
 .nav-list li {
@@ -138,6 +137,7 @@ button:hover {
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
+/* Individual pages */
 #page1 {
     background: red;
 }
@@ -152,13 +152,10 @@ button:hover {
 
 /* Game board styling */
 #board {
-    width: 100%; /* Ensure board fits within viewport width */
-    max-width: 450px; /* Max width to prevent it from growing too large */
-    height: auto; /* Height adjusted to maintain aspect ratio */
-    background-color: lightblue;
-    border: 5px solid slategray;
+    width: 450px; /* Ensure correct size for the game board */
+    height: 450px;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 0 auto; /* Center horizontally */
     display: flex;
     flex-wrap: wrap;
 }
@@ -193,6 +190,7 @@ button:hover {
     border-image-slice: 1; /* Required for border-image */
     animation: borderChange 5s infinite; /* Apply the border animation */
     overflow: hidden; /* Prevent content overflow */
+    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
 }
 
 .image-container {
@@ -275,7 +273,7 @@ button:hover {
     width: 200%;
 }
 
-/* Page 3 Styles */
+/* Page 3 specific styling */
 .hidden {
     opacity: 0;
     filter: blur(5px);
@@ -307,25 +305,25 @@ button:hover {
     transition: width 1.5s;
 }
 
-.page3-img:nth-child(2){
+.page3-img:nth-child(2) {
     background: url(images/liquers.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.page3-img:nth-child(3){
+.page3-img:nth-child(3) {
     background: url(images/wine.jpeg);
     background-size: cover;
     background-position: center;
 }
 
-.page3-img:nth-child(4){
+.page3-img:nth-child(4) {
     background: url(images/beers.jpg);
     background-size: cover;
     background-position: center;
 }
 
-.page3-img h2{
+.page3-img h2 {
     color: red;
     position: absolute;
     bottom: 5px;
@@ -334,12 +332,12 @@ button:hover {
     transition: bottom 1.0s, opacity 0.5s;
 }
 
-.page3-img:hover{
+.page3-img:hover {
     width: 450px;
     cursor: pointer;
 }
 
-.page3-img:hover h2{
+.page3-img:hover h2 {
     opacity: 1;
     bottom: 25px;
 }
@@ -353,7 +351,7 @@ button:hover {
         width: 100%;
         position: absolute;
         top: 60px; /* Adjust based on your header height */
-        left: 0; /* Align with the left edge of the viewport */
+        left: 80px;
     }
 
     .nav-list.active {
@@ -369,37 +367,27 @@ button:hover {
     }
 
     /* Ensure text box and image container take full width on smaller screens */
-    .text-box {
-        font-size: 14px; /* Adjust font size for better readability on small screens */
-        max-width: 100%; /* Ensure text-box fits within the viewport */
-    }
-
     .image-container {
-        max-width: 100%; /* Ensure image-container fits within the viewport */
+        max-height: 80%;
     }
-
     .video-overlay {
         font-size: 38px;
     }
-
-    .page3-img {
-        width: 100%;
-        max-width: 650px; /* Ensure images do not exceed viewport width */
-        height: auto; /* Maintain aspect ratio */
+    .page3-img:hover {
+        width: 650px;
+        cursor: pointer;
     }
-
     .page3-img h2 {
         font-size: 20px;
-    }
-
+    }   
     .page3-img:hover h2 {
         font-size: 15px;
     }
-
-    .slider-wrapper {
-        max-height: 70%; /* Adjust slider height for small screens */
+    .text-box {
+        font-size: 10px;
+        max-height: 60%;
     }
-    .Cocktails {
-        max-width: 100%;
+    .slider-wrapper {
+        max-height: 70%;
     }
 }
