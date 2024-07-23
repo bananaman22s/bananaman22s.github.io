@@ -372,18 +372,28 @@ button:hover {
     }
 
     /* Ensure text box and image container take full width on smaller screens */
-    .text-box,
     .image-container {
         max-height: 80%;
     }
     .video-overlay {
         font-size: 38px;
     }
+    .page3-img:hover{
+    width: 650px;
+    cursor: pointer;
+    }
     .page3-img h2{
     font-size: 20px;
     }   
     .page3-img:hover h2{
     font-size: 15px;
+    }
+    .text-box {
+        font-size: 10px;
+        max-height: 60%;
+    }
+    .slider {
+        max-height: 70%;
     }
 
 }
