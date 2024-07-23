@@ -38,7 +38,7 @@ header {
 /* Navigation styling */
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: center;  /* Centrialise items */
     align-items: center;
 }
 
@@ -49,20 +49,20 @@ nav {
 }
 
 .nav-list li {
-    list-style: none;
+    list-style: none; /* Get rid of the dot */
 }
 
 /* Button styling */
 button {
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; /* Make animations ease and 0.3 long */
     color: ghostwhite;
     background-color: saddlebrown;
     border: none;
     border-radius: 50px;
     padding: 10px 20px;
     display: inline-flex;
-    justify-content: center;
+    justify-content: center; /* Centralise item */
     align-items: center;
 }
 
@@ -74,7 +74,7 @@ button:hover {
 .back-video {
     width: 100%;
     height: 100vh;
-    object-fit: cover;
+    object-fit: cover; /* Make sure it covers the whole screen without horizontal scrolling */
     position: absolute;
     top: 0;
     left: 0;
@@ -88,7 +88,7 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 68px;
+    font-size: 68px; /* Bold the font and change it to size 68 */
     font-weight: bold;
     z-index: 2; /* Ensure text overlay stays above other content */
     transition: all 0.3s ease;
@@ -96,7 +96,7 @@ button:hover {
 
 .video-overlay:hover {
     color: sandybrown;
-    text-shadow: 1px 1px 0 lightblue, -1px -1px 0 red, 1px -1px 0 limegreen, -1px 1px 0 orange; /* Text shadow effect on hover */
+    text-shadow: 1px 1px 0 lightblue, -1px -1px 0 red, 1px -1px 0 limegreen, -1px 1px 0 orange; /* Hover effect */
 }
 
 /* Basic styles for the hamburger icon */
@@ -172,6 +172,8 @@ button:hover {
     height: 50px;
 }
 
+/*Page 1*/
+
 /* Text box and image container styling */
 .content-container {
     display: flex;
@@ -211,6 +213,7 @@ button:hover {
 }
 
 /* Keyframes for border color change animation */
+/* Set colour for borderchange */
 @keyframes borderChange {
     0% {
         border-image: linear-gradient(36deg, white, yellow) 1;
@@ -247,10 +250,11 @@ button:hover {
     }
 }
 
+/* Page 2 */
 .slider {
     width: 100%;
     max-width: 800px;
-    overflow: hidden;
+    overflow: hidden; /* Get ride of vertical and horizontal scrolling for slider */
     border: 2px solid #ccc;
     border-radius: 10px;
     background: wheat;
@@ -300,20 +304,27 @@ button:hover {
     justify-content: center;
 }
 
+/* Page 3 */
 .page3-img {
     width: 150px;
     height: 750px;
     margin: 5px;
     border-radius: 50px;
-    background: url(images/base.jpeg);
+    background: url(images/blank.png);
     background-size: cover;
     background-position: center;
     position: relative;    
     transition: width 1.5s;
 }
 
+.page3-img:nth-child(1) {
+    background: url(images/base.jpeg); /* Init jpgs */
+    background-size: cover;
+    background-position: center;
+}
+
 .page3-img:nth-child(2) {
-    background: url(images/liquers.jpg);
+    background: url(images/liquers.jpg); 
     background-size: cover;
     background-position: center;
 }
@@ -420,7 +431,7 @@ button:hover {
     }
 
     #board img {
-        width: 30px;
+        width: 30px; /* Per box is 30px by 30px (Scale off total width and height) */
         height: 30px;
     }
 
