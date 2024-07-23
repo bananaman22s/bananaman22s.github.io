@@ -1,4 +1,49 @@
 // Main page
+
+// Function to enter fullscreen mode
+function enterFullscreen() {
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, and Opera
+        document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+        document.documentElement.msRequestFullscreen();
+    }
+}
+
+// Function to exit fullscreen mode
+function exitFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { // Firefox
+        document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { // Chrome, Safari, and Opera
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { // IE/Edge
+        document.msExitFullscreen();
+    }
+}
+
+// Toggle fullscreen mode
+function toggleFullscreen() {
+    if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+        enterFullscreen();
+    } else {
+        exitFullscreen();
+    }
+}
+
+// Attach the function to the button
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('fullscreenBtn').addEventListener('click', toggleFullscreen);
+});
+
+// Other existing JavaScript code for your website
+// For example, your slider functionality and other interactions can go here
+
+
 //target all elements to save to constants
 const page1btn=document.querySelector("#page1btn");
 const page2btn=document.querySelector("#page2btn");
