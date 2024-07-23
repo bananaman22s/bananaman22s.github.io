@@ -13,7 +13,6 @@ html, body {
 /* Body styling */
 body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: hidden; /* Prevent vertical scrolling */
     font-family: Arial, sans-serif;
 }
 
@@ -140,9 +139,22 @@ button:hover {
 }
 
 /* Individual pages */
-#page1, #page2, #page3 {
+#page1, 
+#page2, 
+#page3 {
     overflow-x: hidden;
-    overflow-y: hidden; /* Prevent vertical scrolling on individual pages */
+}
+
+#page1 {
+    background-color: red;
+}
+
+#page2 {
+    background-color: blue;
+}
+
+#page3 {
+    background-color: limegreen;
 }
 
 /* Game board styling */
@@ -290,7 +302,7 @@ button:hover {
 
 .page3-img {
     width: 150px;
-    height: 800px;
+    height: 750px;
     margin: 10px;
     border-radius: 50px;
     background: url(images/base.jpeg);
@@ -343,7 +355,7 @@ button:hover {
         display: none; /* Hide navigation list by default on small screens */
         flex-direction: column;
         gap: 50px;
-        width: 100%;
+        width: 80%;
         position: absolute;
         top: 60px; /* Adjust based on your header height */
         left: 80px;
@@ -368,15 +380,19 @@ button:hover {
     .video-overlay {
         font-size: 38px;
     }
+    .page3-img {
+        height: 500px;
+        margin: 2px;
+    }
     .page3-img:hover {
-        width: 650px;
+        width: 750px;
         cursor: pointer;
     }
     .page3-img h2 {
         font-size: 20px;
     }   
     .page3-img:hover h2 {
-        font-size: 15px;
+        font-size: 10px;
     }
     .text-box {
         font-size: 10px;
@@ -399,4 +415,5 @@ button:hover {
         width: 30px;
         height: 30px;
     }
+
 }
