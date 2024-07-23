@@ -390,4 +390,18 @@ button:hover {
     .slider-wrapper {
         max-height: 70%;
     }
+    /* Game board styling */
+    #board {
+        width: 270px; /* Ensure correct size for the game board */
+        height: 270px;
+        border-radius: 10px;
+        margin: 0 auto; /* Center horizontally */
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #board img {
+        width: 30px;
+        height: 30px;
+    }
 }
